@@ -3,23 +3,35 @@ package banco;
 import models.Conta;
 
 public class Banco {
-    public static void main(String[] args) {
-        /*
-         * Criando dois objetos de conta (a e b) que terão as propriedades da classe
-         * conta, localizada em models.Conta;
-         */
-        Conta a = new Conta("Conta 1");
-        Conta b = new Conta("Conta 2");
-        System.out.println(a.toString());
-        System.out.println(b.toString());
+    private Pessoa titular;
+    private int agencia, numeroConta;
+    private float saldo;
 
-        /*
-         * Operação exemplar, na qual depositei um valor qualque e houve uma alteração
-         * no saldo da conta a; 
-         */
-        a.depositar(125);
-        System.out.println(a.toString());
-        a.sacar(25);
-        System.out.println(a.toString());
+    public Conta(Pessoa titular, int agencia, int numeroConta){
+        this.titular = titular;
+        this.agencia = agencia;
+        this.numeroConta = numeroConta;
+        saldo = 0;
+    }
+
+    public float adicionaSaldo() {
+        saldo += valor;
+        return saldo;
+    }
+
+    public void removeSaldo() {
+        saldo -= valor;
+    }
+
+    public Pessoa getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Pessoa Titular) {
+        this.titular = titular;
+    }
+
+    public int getAgencia() {
+        return agencia;
     }
 }

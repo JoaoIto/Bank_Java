@@ -1,43 +1,31 @@
 package models;
 
 public class Conta {
-    /*
-     * Criando variáveis padrão do objeto de conta, (saldo: valor numérico; e conta:
-     * valor em caracteres[nome da conta];)
-     */
-    float saldo;
-    String conta;
+    private String nome;
+    private int idade;
+    private float renda;
+    private long cpf;
 
-    public Conta(String conta) {
-        /* Função da variável de string conta; */
-        saldo = 0;
-        this.conta = conta;
+    public Pessoa(String nome, int idade, float renda, long cpf) {
+        this.nome = nome;
+        this.idade = idade;
+        this.renda = renda;
+        this.cpf = cpf;
     }
 
-    /*
-     * As funções a seguir são as operações matemáticas que o código fará assim que
-     * receber cada comando ao criar uma conta de usuário novo.
-     * No caso, a de depósito irá somar ao valor de saldo e a de saque, irá subtrair
-     * o valor na susa conta;
-     */
-    public void depositar(float deposito) {
-        saldo += deposito;
+    public String getNome(){
+        return nome;
     }
-
-    /*
-     * Nessa operação ainda é colocado, que quando o usuário não pode tentar sacar
-     * qualquer valor, já que se o valor da operação for maior que o que ele já
-     * estiver em saque, ele deve transmitir na tela, uma mensagem de erro!
-     */
-    public void sacar(float sacar) {
-        if (sacar > saldo) {
-            System.out.println("Erro!");
-        } else {
-            saldo -= sacar;
-        }
+    public void setNome(String nome){
+        this.nome = nome;
     }
-
-    public String toString() {
-        return "Saldo: " + saldo;
+    public int getIdade(){
+        return idade;
+    }
+    public float getRenda(){
+        return renda;
+    }
+    public long getCpf(){
+        return cpf;
     }
 }
